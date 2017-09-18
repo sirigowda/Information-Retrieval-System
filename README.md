@@ -16,12 +16,19 @@
    this field as the source for our spell check. To enable this Spellcheck component specify the source of the terms in the                solrconfig.xml file, which is present in the conf folder of the core.
   
   `<searchComponent class="solr.SpellCheckComponent" name="spellcheck">
+  
    <lst name="spellchecker">
+  
     <str name="classname">solr.IndexBasedSpellChecker</str>
+    
     <str name="spellcheckIndexDir">./spellchecker</str>
+    
     <str name="field">_text_</str>
+    
     <str name="buildOnCommit">true</str>
+  
   </lst>
+ 
  <searchComponent>`
 
   The first element defines the searchComponent to use the solr.SpellCheckComponent. The classname is the specific
