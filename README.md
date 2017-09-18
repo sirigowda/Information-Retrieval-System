@@ -6,7 +6,7 @@
 
 2.	Start the Solr server using the command **bin/solr start**. Create a core with name “abc” using the command **bin/post  create -c abc**. 
 
-3.The next step to enable the Spellcheck component by specifying the source of the terms in the solrconfig.xml file, which is present in the conf folder of the core. We also need to	add this spellcheck component to the requestHandler “select”. That is, for every query, if you want to perform a spellcheck. We have specified “spellcheck” to be “true” by default, by including it within the “defaults” list.
+3. The next step to enable the Spellcheck component by specifying the source of the terms in the solrconfig.xml file, which is present in the conf folder of the core. We also need to	add this spellcheck component to the requestHandler “select”. That is, for every query, if you want to perform a spellcheck. We have specified “spellcheck” to be “true” by default, by including it within the “defaults” list.
 
 4.	Use Apache Tika and in built post tool to index the html files using the command **bin/post -c abc -filetypes html crawl_data_folder**. 
 
