@@ -20,7 +20,7 @@ public class info {
         static HashMap<String, String> FileURLMap = new HashMap<String, String>();
 
         public static void fetchFieNameExcel(){
-                String csvFile = "/Applications/MAMP/htdocs/IR4/solr-6.5.0/NBCNewsData/mapNBCNewsDataFile.csv";
+                String csvFile = "/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/mapABCNewsDataFile.csv";
                 BufferedReader br = null;
                 String line = "";
                 String cvsSplitBy = ",";
@@ -52,10 +52,10 @@ public class info {
         public static void main(String[] args) throws Exception{
                 fetchFieNameExcel();
                 HashSet<String> edges = new HashSet<String>();
-                String outputFileName = "/Applications/MAMP/htdocs/IR4/solr-6.5.0/edgeList.txt";
+                String outputFileName = "/home/siri/Downloads/ABCNewsData/edgeList.txt";
                 File outputFile = new File(outputFileName);
                 BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-                File dirPath = new File("/Applications/MAMP/htdocs/IR4/solr-6.5.0/NBCNewsData/NBCNewsDownloadData/");
+                File dirPath = new File("/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/");
 
                 for(File fileEntry: dirPath.listFiles()){
                         Document doc = Jsoup.parse(fileEntry,"UTF-8", FileURLMap.get(fileEntry.getName()));
