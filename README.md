@@ -8,7 +8,7 @@
 
 3. Create a field “_text_” as shown below:
    
-  <field name="_text_" type="text_en_splitting" indexed="true" stored="false" multivalued="true"/>
+  "<field name="_text_" type="text_en_splitting" indexed="true" stored="false" multivalued="true"/>"
    
    This field contains all the text from other fields in Solr, as we have specified the copyField source as “*”. We will be using
 this field as the source for our spell check. To enable this Spellcheck component specify the source of the terms in the solrconfig.xml file, which is present in the conf folder of the core.
