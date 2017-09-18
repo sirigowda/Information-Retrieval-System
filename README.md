@@ -6,11 +6,13 @@
 
 2.	Start the Solr server using the command **bin/solr start**. Create a core with name “abc” using the command **bin/post  create -c abc**. 
 
-3. Create a field “_text_” as shown below:
+3. Enabling Spell Check
+
+  Create a field “_text_” as shown below:
    
   `<field name="_text_" type="text_en_splitting" indexed="true" stored="false" multivalued="true"/>`
    
-   This field contains all the text from other fields in Solr, as we have specified the copyField source as “*”. We will be using
+  This field contains all the text from other fields in Solr, as we have specified the copyField source as “*”. We will be using
    this field as the source for our spell check. To enable this Spellcheck component specify the source of the terms in the                solrconfig.xml file, which is present in the conf folder of the core.
   
   `<searchComponent class="solr.SpellCheckComponent" name="spellcheck">
