@@ -18,7 +18,7 @@ public class info {
         static HashMap<String, String> urlFileMap = new HashMap<String, String>();
         static HashMap<String, String> FileURLMap = new HashMap<String, String>();
         
-        public final String project_directory="/home/siri/Downloads/solr-6.5.0/server/solr/ABCNewsData/";
+        public final String project_directory="/home/siri/solr-6.5.0/server/solr/ABCNewsData/";
         
         public static void fetchFieNameExcel(){
                 String csvFile = project_directory + "ABCNewsDownloadData/mapABCNewsDataFile.csv";
