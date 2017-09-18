@@ -2,7 +2,7 @@
 
 ### STEPS TO CREATE SEARCH ENGINE
 
-1.	Install Ubuntu 16.04 LTS and install Solr on it. Then download the dataset(available online) for ABCNews or any other news site and place it in the solr folder.
+1.	Install Ubuntu 16.04 LTS (alternatively use Windows / Mac OS X) and install Solr on it. Then download the dataset(available online) for ABCNews or any other news site and place it in the solr folder.
 
 2.	Start the Solr server using the command **bin/solr start**. Create a core with name “abc” using the command **bin/post  create -c abc**. 
 
