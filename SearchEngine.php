@@ -92,7 +92,6 @@ die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</p
 }
 
 $forcecheck = isset($_REQUEST['forcecheck']) ? $_REQUEST['forcecheck'] : false;
-echo "#####################";
 echo SpellCorrector::correct($query);
 	if(!empty($_GET["algo"]) && $query!=SpellCorrector::correct($query) && $forcecheck==false)
 	{
@@ -117,7 +116,6 @@ echo SpellCorrector::correct($query);
 		
 $algo = $_GET["algo"];
 if($algo=="lucene"){
-echo "LUCENE";
 try
 {
 $additionalParameters=array('fl'=>'id,title,og_url,description');
@@ -131,7 +129,6 @@ catch(Exception $e)
 die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</pre></body></html>");
 }
 }else if($algo=="pagerank"){
-echo "PAGERANK";
 try
 {
 $additionalParameters=array('fl'=>'id,title,og_url,description','sort'=>'pageRankFile desc');
