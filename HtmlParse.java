@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 public class HtmlParse {
 
-	public final String baseFilePath = "/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/";
+	public final String baseFilePath = "/home/siri/solr-6.5.0/server/solr/ABCNewsData/ABCNewsDownloadData/";
 	@SuppressWarnings("deprecation")
 	public static void main(final String[] args) throws IOException,SAXException, TikaException {
 
