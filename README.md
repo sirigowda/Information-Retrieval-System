@@ -11,21 +11,21 @@
   `<field name="_text_" type="text_en_splitting" indexed="true" stored="false" multivalued="true"/>`
    
    This field contains all the text from other fields in Solr, as we have specified the copyField source as “*”. We will be using
-this field as the source for our spell check. To enable this Spellcheck component specify the source of the terms in the solrconfig.xml file, which is present in the conf folder of the core.
+   this field as the source for our spell check. To enable this Spellcheck component specify the source of the terms in the                solrconfig.xml file, which is present in the conf folder of the core.
   
-  <searchComponent class="solr.SpellCheckComponent" name="spellcheck">
+  `<searchComponent class="solr.SpellCheckComponent" name="spellcheck">
    <lst name="spellchecker">
     <str name="classname">solr.IndexBasedSpellChecker</str>
     <str name="spellcheckIndexDir">./spellchecker</str>
     <str name="field">_text_</str>
     <str name="buildOnCommit">true</str>
   </lst>
- <searchComponent>
+ <searchComponent>`
 
-The first element defines the searchComponent to use the solr.SpellCheckComponent. The classname is the specific
-implementation of the SpellCheckComponent, in this case solr.IndexBasedSpellChecker. buildOnCommit defines whether to build the spell check index at every commit (that is, every time new documents are added to the index). It is optional, and can be omitted if you would rather set it to false. In the figure above, we have specified “_text_” to be the field that is the source of our spelling suggestions.
+  The first element defines the searchComponent to use the solr.SpellCheckComponent. The classname is the specific
+  implementation of the SpellCheckComponent, in this case solr.IndexBasedSpellChecker. buildOnCommit defines whether to build the spell   check index at every commit (that is, every time new documents are added to the index). It is optional, and can be omitted if you       would rather set it to false. In the figure above, we have specified “_text_” to be the field that is the source of our spelling         suggestions.
 
-We then	add a spellcheck component to the requestHandler “select”. That is, for every query, spellcheck is enabled. We have specified “spellcheck” to be “true” by default, by including it within the “defaults” list.
+  We then	add a spellcheck component to the requestHandler “select”. That is, for every query, spellcheck is enabled. We have           specified “spellcheck” to be “true” by default, by including it within the “defaults” list.
 
 4.	Use Apache Tika and in built post tool to index the html files using the command **bin/post -c abc -filetypes html crawl_data_folder**. 
 
