@@ -15,11 +15,11 @@ import org.xml.sax.SAXException;
 
 public class HtmlParse {
 
-
+	public final String baseFilePath = "/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/";
 	@SuppressWarnings("deprecation")
 	public static void main(final String[] args) throws IOException,SAXException, TikaException {
 
-		File folder_name = new File("/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/");
+		File folder_name = new File(baseFilePath);
 		File[] listOfFiles = folder_name.listFiles();
 		String outputFileName = "big.txt";
 		File outputFile = new File(outputFileName);
@@ -29,7 +29,7 @@ public class HtmlParse {
 		for (File file : listOfFiles) {
 			if (file.isFile() && file.getName().contains(".html")) {
 				System.out.println(file.getName());
-				FileInputStream inputstream = new FileInputStream(new File("/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/"+file.getName()));
+				FileInputStream inputstream = new FileInputStream(new File(baseFilePath+file.getName()));
 				//detecting the file type
 				BodyContentHandler handler = new BodyContentHandler(-1);
 				Metadata metadata = new Metadata();
