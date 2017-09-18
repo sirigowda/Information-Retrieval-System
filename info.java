@@ -18,9 +18,11 @@ public class info {
 
         static HashMap<String, String> urlFileMap = new HashMap<String, String>();
         static HashMap<String, String> FileURLMap = new HashMap<String, String>();
-
+        
+        public final String project_directory="/home/siri/Downloads/ABCNewsData/";
+        
         public static void fetchFieNameExcel(){
-                String csvFile = "/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/mapABCNewsDataFile.csv";
+                String csvFile = project_directory + "ABCNewsDownloadData/mapABCNewsDataFile.csv";
                 BufferedReader br = null;
                 String line = "";
                 String cvsSplitBy = ",";
@@ -52,10 +54,10 @@ public class info {
         public static void main(String[] args) throws Exception{
                 fetchFieNameExcel();
                 HashSet<String> edges = new HashSet<String>();
-                String outputFileName = "/home/siri/Downloads/ABCNewsData/edgeList.txt";
+                String outputFileName = project_directory + "edgeList.txt";
                 File outputFile = new File(outputFileName);
                 BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
-                File dirPath = new File("/home/siri/Downloads/ABCNewsData/ABCNewsDownloadData/");
+                File dirPath = new File(project_directory + "ABCNewsDownloadData/");
 
                 for(File fileEntry: dirPath.listFiles()){
                         Document doc = Jsoup.parse(fileEntry,"UTF-8", FileURLMap.get(fileEntry.getName()));
