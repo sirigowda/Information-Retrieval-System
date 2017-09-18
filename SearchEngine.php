@@ -11,7 +11,7 @@ $additionalParameters=false;
 $query =isset($_REQUEST['q']) ? $_REQUEST['q'] : false;
 $results =false;
 $fileURLMap=array();
-$handle=fopen("/home/siri/Downloads/ABCNewsData/mapABCNewsDataFile.csv","r");
+$handle=fopen("/home/siri/solr-6.5.0/server/solr/ABCNewsData/mapABCNewsDataFile.csv","r");
 if ($handle!== FALSE) 
 {
     while (($data = fgetcsv($handle, ",")) !== FALSE) 
@@ -61,7 +61,6 @@ function make_links_clickable($text){
 }
 $algo = $_GET["algo"];
 if($algo=="lucene"){
-echo "LUCENE";
 try
 {
 $additionalParameters=array('fl'=>'id,title,og_url,description');
@@ -76,7 +75,6 @@ die("<html><head><title>SEARCH EXCEPTION</title><body><pre>{$e->__toString()}</p
 }
 
 }else if($algo=="pagerank"){
-echo "PAGERANK";
 try
 {
 $additionalParameters=array('fl'=>'id,title,og_url,description','sort'=>'pageRankFile desc');
