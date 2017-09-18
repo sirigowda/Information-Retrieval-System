@@ -37,7 +37,7 @@
 
 7.	Rename the page rank file as “external_pageRankFile.txt” and place it in the data folder of the core. Add a search component to solrconfig.xml and make it to use the SuggestComponent. After adding the search component, a request handler must be added to solrconfig.xml. This request handler works the same as any other request handler, and allows you to configure default parameters for serving suggestion requests. The default values for the number of suggestions is set to 5, by defining the value for element “suggest.count”, the default dictionary to be used is defined by “suggest.dictionary”.
 
-8. The core is then reloaded. We can then search using either Lucene or PageRank algorithms through the SolrUI by changing the parameters, i.e. setting “sort” parameter to “pageRankFile desc” will allow us to search using page rank algorithm. The default search algorithm used by Solr is Lucene.
+8. The core must then be reloaded. We can search using either Lucene or PageRank algorithms through the SolrUI by changing the parameters, i.e. setting “sort” parameter to “pageRankFile desc” will allow us to search using page rank algorithm. The default search algorithm used by Solr is Lucene.
 
 9.	 Install the Apache2 web server and the solr-php-client-API client. SearchEngine.php contains a search box and two radio buttons. The search box is used to enter the query to be searched, by sending it to Solr, and the radio buttons are used to select the algorithm based on which the search must be performed. The options for the radio button is Lucene and PageRank. The PHP script then parses the result and formats and displays the results. 
  
