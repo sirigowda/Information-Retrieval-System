@@ -1,6 +1,6 @@
 ## INFORMATION RETREIVAL SYSTEM
 
-###STEPS TO CREATE SEARCH ENGINE
+### STEPS TO CREATE SEARCH ENGINE
 
 1.	Install Ubuntu 16.04 LTS and install Solr on it. Then download the dataset for ABCNews from Google Drive folder provided and place it in the solr folder.
 
